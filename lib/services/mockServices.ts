@@ -14,7 +14,7 @@ export class MockAuthService implements IAuthService {
     return { success: true, message: "OTP sent to +91 " + mobile.slice(-10) };
   }
 
-  async verifyOtp(mobile: string, otp: string): Promise<{ success: boolean; token?: string; user?: any }> {
+  async verifyOtp(mobile: string, otp: string): Promise<{ success: boolean; token?: string; user?: any; message?: string }> {
     await new Promise((r) => setTimeout(r, 700));
     if (otp === "123456" || otp.length === 6) {
       const user = { mobile, name: "InGrow Investor", kycVerified: true };
