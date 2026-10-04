@@ -46,7 +46,7 @@ export default function LoginPage() {
     if (res.success) {
       router.push("/investments");
     } else {
-      setError(res.message);
+      setError(res.message || "Invalid verification code.");
     }
   };
 
