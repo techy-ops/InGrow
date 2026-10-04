@@ -2,7 +2,7 @@ import { Goal, PortfolioSummary, FundHolding, InvestmentActivity } from "../type
 
 export interface IAuthService {
   requestOtp(mobile: string): Promise<{ success: boolean; message: string }>;
-  verifyOtp(mobile: string, otp: string): Promise<{ success: boolean; token?: string; user?: any }>;
+  verifyOtp(mobile: string, otp: string): Promise<{ success: boolean; token?: string; user?: any; message?: string }>;
   logout(): Promise<void>;
 }
 
