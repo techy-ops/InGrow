@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest: #063B2A;
+  --color-ingreen: #0B6B4F;
+  --color-mint: #DDF5EA;
+  --color-warm: #F8FAF7;
+  --color-charcoal: #17211D;
+  --color-muted: #6B7771;
+  --color-gold: #D7A84B;
+}
+
+@layer base {
+  * {
+    border-color: rgba(23, 33, 29, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F8FAF7;
+    color: #17211D;
+  }
+
+  body {
+    background-color: #F8FAF7;
+    color: #17211D;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #063B2A;
+    color: #DDF5EA;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4EEDB;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B6B4F;
+}
+
+/* Subtle fintech mesh pattern */
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(6, 59, 42, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-forest-grid {
+  background-image: radial-gradient(rgba(221, 245, 234, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Accessible focus ring */
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.glass-panel-dark {
+  background: rgba(6, 59, 42, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(221, 245, 234, 0.12);
+}
